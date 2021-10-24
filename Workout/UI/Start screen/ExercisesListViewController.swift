@@ -17,7 +17,7 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.register(ExerciseOverviewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.collectionViewLayout = configureLayout()
         startWorkoutButton.setTitle("exercisesList.startButton.title".localized, for: .normal)
 
         DataLoader.loadExercisesData { [weak self] workout in
@@ -35,6 +35,11 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
     func reloadData(with newWorkout: Workout) {
         workout = newWorkout
         collectionView.reloadData()
+    }
+    
+    private func configureLayout() -> UICollectionViewLayout {
+        let config = UICollectionLayoutListConfiguration(appearance: .plain)
+        return UICollectionViewCompositionalLayout.list(using: config)
     }
     
     // MARK: UICollectionViewDataSource
@@ -60,10 +65,6 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
             return cell
         }
         return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 120)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

@@ -18,32 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Q2-wZ-H4S">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vku-Ns-eEd">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExerciseOverviewCell" id="ejL-9r-uqv" customClass="ExerciseOverviewCell" customModule="Workout" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z7U-JR-9jQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <color key="backgroundColor" name="AccentColor"/>
-                                        <size key="customSize" width="414" height="128"/>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="1dK-Tz-IsR" id="E64-fH-otJ"/>
-                                    <outlet property="delegate" destination="1dK-Tz-IsR" id="h3o-gL-hdM"/>
-                                </connections>
-                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZv-BL-dAW">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <subviews>
@@ -80,6 +54,76 @@
                                     <constraint firstAttribute="trailing" secondItem="KuY-Fq-Q3X" secondAttribute="trailing" constant="16" id="zwV-YR-1Af"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Q2-wZ-H4S">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vku-Ns-eEd">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExerciseOverviewCell" id="ejL-9r-uqv" customClass="ExerciseOverviewCell" customModule="Workout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z7U-JR-9jQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vOw-SK-D1h">
+                                                    <rect key="frame" x="8" y="8" width="100" height="112"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="cLj-wY-XmN"/>
+                                                        <constraint firstAttribute="height" constant="60" id="sCU-YT-Eap"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clD-YY-rF2">
+                                                    <rect key="frame" x="356" y="8" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="2O3-kB-uq9"/>
+                                                        <constraint firstAttribute="height" constant="50" id="odT-FV-gjy"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="gray" image="star" catalog="system" buttonSize="large">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="favouriteAction:" destination="ejL-9r-uqv" eventType="touchUpInside" id="wUa-Rl-g79"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HKV-h7-8Hd">
+                                                    <rect key="frame" x="116" y="8" width="232" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="clD-YY-rF2" secondAttribute="trailing" constant="8" id="DZJ-EF-tbE"/>
+                                                <constraint firstItem="clD-YY-rF2" firstAttribute="top" secondItem="Z7U-JR-9jQ" secondAttribute="top" constant="8" id="JMz-Uv-iWz"/>
+                                                <constraint firstItem="vOw-SK-D1h" firstAttribute="top" secondItem="Z7U-JR-9jQ" secondAttribute="top" constant="8" id="QWA-oh-Ek8"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HKV-h7-8Hd" secondAttribute="bottom" constant="8" id="SEi-eA-Hap"/>
+                                                <constraint firstItem="HKV-h7-8Hd" firstAttribute="leading" secondItem="vOw-SK-D1h" secondAttribute="trailing" constant="8" id="X5h-7a-kkM"/>
+                                                <constraint firstItem="vOw-SK-D1h" firstAttribute="leading" secondItem="Z7U-JR-9jQ" secondAttribute="leading" constant="8" id="Yvg-V0-lIu"/>
+                                                <constraint firstItem="HKV-h7-8Hd" firstAttribute="top" secondItem="Z7U-JR-9jQ" secondAttribute="top" constant="8" id="Zw0-Nx-hXG"/>
+                                                <constraint firstAttribute="bottom" secondItem="vOw-SK-D1h" secondAttribute="bottom" constant="8" id="cG7-ft-8i5"/>
+                                                <constraint firstItem="clD-YY-rF2" firstAttribute="leading" secondItem="HKV-h7-8Hd" secondAttribute="trailing" constant="8" id="d2Z-Bc-hWo"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="128"/>
+                                        <connections>
+                                            <outlet property="exerciseIcon" destination="vOw-SK-D1h" id="2VO-vb-fGM"/>
+                                            <outlet property="exerciseNameLabel" destination="HKV-h7-8Hd" id="fOT-tV-Ac5"/>
+                                            <outlet property="favouriteButton" destination="clD-YY-rF2" id="4K2-mY-C8P"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="1dK-Tz-IsR" id="E64-fH-otJ"/>
+                                    <outlet property="delegate" destination="1dK-Tz-IsR" id="h3o-gL-hdM"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Je-Ac-zhY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,10 +144,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSE-Gt-rWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1400" y="-41"/>
+            <point key="canvasLocation" x="1398.5507246376812" y="-41.517857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
