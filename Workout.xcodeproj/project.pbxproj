@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		7676C76827253E5900EBC2BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C76727253E5900EBC2BC /* AppDelegate.swift */; };
 		7676C76A27253E5900EBC2BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C76927253E5900EBC2BC /* SceneDelegate.swift */; };
-		7676C76C27253E5900EBC2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C76B27253E5900EBC2BC /* ViewController.swift */; };
+		7676C76C27253E5900EBC2BC /* ExercisesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C76B27253E5900EBC2BC /* ExercisesListViewController.swift */; };
 		7676C76F27253E5900EBC2BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7676C76D27253E5900EBC2BC /* Main.storyboard */; };
 		7676C77127253E5A00EBC2BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7676C77027253E5A00EBC2BC /* Assets.xcassets */; };
 		7676C77427253E5A00EBC2BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7676C77227253E5A00EBC2BC /* LaunchScreen.storyboard */; };
 		7676C77F27253E5A00EBC2BC /* WorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C77E27253E5A00EBC2BC /* WorkoutTests.swift */; };
 		7676C78927253E5A00EBC2BC /* WorkoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C78827253E5A00EBC2BC /* WorkoutUITests.swift */; };
 		7676C78B27253E5A00EBC2BC /* WorkoutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C78A27253E5A00EBC2BC /* WorkoutUITestsLaunchTests.swift */; };
+		7676C79927253E6C00EBC2BC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7676C79827253E6C00EBC2BC /* Alamofire */; };
+		7676C79B27253F3500EBC2BC /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C79A27253F3500EBC2BC /* DataLoader.swift */; };
+		7676C7A027253FA600EBC2BC /* ExerciseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C79F27253FA600EBC2BC /* ExerciseObject.swift */; };
+		7676C7A32725475C00EBC2BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7676C7A12725475C00EBC2BC /* Localizable.strings */; };
+		7676C7A72725493D00EBC2BC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C7A62725493D00EBC2BC /* String+Extension.swift */; };
+		7676C7A927254A6800EBC2BC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C7A827254A6800EBC2BC /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +45,7 @@
 		7676C76427253E5900EBC2BC /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7676C76727253E5900EBC2BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7676C76927253E5900EBC2BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7676C76B27253E5900EBC2BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7676C76B27253E5900EBC2BC /* ExercisesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesListViewController.swift; sourceTree = "<group>"; };
 		7676C76E27253E5900EBC2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7676C77027253E5A00EBC2BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7676C77327253E5A00EBC2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		7676C78427253E5A00EBC2BC /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7676C78827253E5A00EBC2BC /* WorkoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutUITests.swift; sourceTree = "<group>"; };
 		7676C78A27253E5A00EBC2BC /* WorkoutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7676C79A27253F3500EBC2BC /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		7676C79F27253FA600EBC2BC /* ExerciseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseObject.swift; sourceTree = "<group>"; };
+		7676C7A22725475C00EBC2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7676C7A42725476B00EBC2BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7676C7A62725493D00EBC2BC /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		7676C7A827254A6800EBC2BC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7676C79927253E6C00EBC2BC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +112,17 @@
 		7676C76627253E5900EBC2BC /* Workout */ = {
 			isa = PBXGroup;
 			children = (
+				7676C7A52725492D00EBC2BC /* Extensions */,
+				7676C79E27253F9900EBC2BC /* Models */,
+				7676C79D27253F4400EBC2BC /* UI */,
+				7676C79C27253F3A00EBC2BC /* Data Processors */,
 				7676C76727253E5900EBC2BC /* AppDelegate.swift */,
 				7676C76927253E5900EBC2BC /* SceneDelegate.swift */,
-				7676C76B27253E5900EBC2BC /* ViewController.swift */,
 				7676C76D27253E5900EBC2BC /* Main.storyboard */,
 				7676C77027253E5A00EBC2BC /* Assets.xcassets */,
 				7676C77227253E5A00EBC2BC /* LaunchScreen.storyboard */,
 				7676C77527253E5A00EBC2BC /* Info.plist */,
+				7676C7A12725475C00EBC2BC /* Localizable.strings */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -127,6 +144,39 @@
 			path = WorkoutUITests;
 			sourceTree = "<group>";
 		};
+		7676C79C27253F3A00EBC2BC /* Data Processors */ = {
+			isa = PBXGroup;
+			children = (
+				7676C79A27253F3500EBC2BC /* DataLoader.swift */,
+			);
+			path = "Data Processors";
+			sourceTree = "<group>";
+		};
+		7676C79D27253F4400EBC2BC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7676C76B27253E5900EBC2BC /* ExercisesListViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7676C79E27253F9900EBC2BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7676C79F27253FA600EBC2BC /* ExerciseObject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7676C7A52725492D00EBC2BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7676C7A62725493D00EBC2BC /* String+Extension.swift */,
+				7676C7A827254A6800EBC2BC /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +193,9 @@
 			dependencies = (
 			);
 			name = Workout;
+			packageProductDependencies = (
+				7676C79827253E6C00EBC2BC /* Alamofire */,
+			);
 			productName = Workout;
 			productReference = 7676C76427253E5900EBC2BC /* Workout.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +268,9 @@
 				Base,
 			);
 			mainGroup = 7676C75B27253E5900EBC2BC;
+			packageReferences = (
+				7676C79727253E6C00EBC2BC /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 7676C76527253E5900EBC2BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7676C77427253E5A00EBC2BC /* LaunchScreen.storyboard in Resources */,
+				7676C7A32725475C00EBC2BC /* Localizable.strings in Resources */,
 				7676C77127253E5A00EBC2BC /* Assets.xcassets in Resources */,
 				7676C76F27253E5900EBC2BC /* Main.storyboard in Resources */,
 			);
@@ -258,8 +315,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7676C76C27253E5900EBC2BC /* ViewController.swift in Sources */,
+				7676C79B27253F3500EBC2BC /* DataLoader.swift in Sources */,
+				7676C7A027253FA600EBC2BC /* ExerciseObject.swift in Sources */,
+				7676C76C27253E5900EBC2BC /* ExercisesListViewController.swift in Sources */,
 				7676C76827253E5900EBC2BC /* AppDelegate.swift in Sources */,
+				7676C7A927254A6800EBC2BC /* UIViewController+Extension.swift in Sources */,
+				7676C7A72725493D00EBC2BC /* String+Extension.swift in Sources */,
 				7676C76A27253E5900EBC2BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +372,15 @@
 				7676C77327253E5A00EBC2BC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7676C7A12725475C00EBC2BC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7676C7A22725475C00EBC2BC /* Base */,
+				7676C7A42725476B00EBC2BC /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -624,6 +694,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7676C79727253E6C00EBC2BC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7676C79827253E6C00EBC2BC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7676C79727253E6C00EBC2BC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7676C75C27253E5900EBC2BC /* Project object */;
 }
