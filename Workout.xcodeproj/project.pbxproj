@@ -22,6 +22,7 @@
 		7676C7A32725475C00EBC2BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7676C7A12725475C00EBC2BC /* Localizable.strings */; };
 		7676C7A72725493D00EBC2BC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C7A62725493D00EBC2BC /* String+Extension.swift */; };
 		7676C7A927254A6800EBC2BC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C7A827254A6800EBC2BC /* UIViewController+Extension.swift */; };
+		7676C7AE27254E8A00EBC2BC /* ExerciseOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676C7AC27254E8A00EBC2BC /* ExerciseOverviewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7676C7A42725476B00EBC2BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7676C7A62725493D00EBC2BC /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7676C7A827254A6800EBC2BC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		7676C7AC27254E8A00EBC2BC /* ExerciseOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseOverviewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +157,8 @@
 		7676C79D27253F4400EBC2BC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				7676C76B27253E5900EBC2BC /* ExercisesListViewController.swift */,
+				7676C7AB27254E4300EBC2BC /* Workout execution */,
+				7676C7AA27254E3900EBC2BC /* Start screen */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -175,6 +178,22 @@
 				7676C7A827254A6800EBC2BC /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7676C7AA27254E3900EBC2BC /* Start screen */ = {
+			isa = PBXGroup;
+			children = (
+				7676C76B27253E5900EBC2BC /* ExercisesListViewController.swift */,
+				7676C7AC27254E8A00EBC2BC /* ExerciseOverviewCell.swift */,
+			);
+			path = "Start screen";
+			sourceTree = "<group>";
+		};
+		7676C7AB27254E4300EBC2BC /* Workout execution */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Workout execution";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +338,7 @@
 				7676C7A027253FA600EBC2BC /* ExerciseObject.swift in Sources */,
 				7676C76C27253E5900EBC2BC /* ExercisesListViewController.swift in Sources */,
 				7676C76827253E5900EBC2BC /* AppDelegate.swift in Sources */,
+				7676C7AE27254E8A00EBC2BC /* ExerciseOverviewCell.swift in Sources */,
 				7676C7A927254A6800EBC2BC /* UIViewController+Extension.swift in Sources */,
 				7676C7A72725493D00EBC2BC /* String+Extension.swift in Sources */,
 				7676C76A27253E5900EBC2BC /* SceneDelegate.swift in Sources */,

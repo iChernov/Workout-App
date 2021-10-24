@@ -9,4 +9,4 @@
 "OK"                                    = "Ok";
 "warning.exerciseLoading.fail.title"    = "Attention";
 "warning.exerciseLoading.fail.text"     = "Couldn't load exercises at the moment - please check your internet connection and try to restart app.";
-
+"exercisesList.startButton.title"       = "Start workout";

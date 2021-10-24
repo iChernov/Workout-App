@@ -24,9 +24,6 @@ class DataLoader {
                 debugPrint(response.result)
                 return
             }
-            for exercise in workout {
-                print(exercise.name)
-            }
             completion(workout)
         }
     }
