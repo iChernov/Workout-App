@@ -9,17 +9,15 @@ import UIKit
 
 private let reuseIdentifier = "ExerciseOverviewCell"
 
-class ExercisesListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ExercisesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var workout: Workout = Workout()
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var tableView: UITableView!
     @IBOutlet weak var startWorkoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.collectionViewLayout = configureLayout()
         startWorkoutButton.setTitle("exercisesList.startButton.title".localized, for: .normal)
-        self.view.sendSubviewToBack(collectionView)
 
         DataLoader.loadExercisesData { [weak self] workout in
             guard let workout = workout else {
@@ -42,7 +40,7 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
     
     func reloadData(with newWorkout: Workout) {
         workout = newWorkout
-        collectionView.reloadData()
+        tableView.reloadData()
     }
     
     private func configureLayout() -> UICollectionViewLayout {
@@ -55,39 +53,26 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return workout.count
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 0 ? workout.count : 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let exerciseIndex = indexPath.row
         guard exerciseIndex < workout.count else {
-            return UICollectionViewCell() // should never be called
+            return UITableViewCell() // should never be called
         }
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ExerciseOverviewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? ExerciseOverviewCell {
             cell.setup(with: workout[exerciseIndex])
             return cell
         }
-        return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 0, bottom: 60, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        if section == 0 {
-            return CGSize(width: UIScreen.main.bounds.width, height: 60)
-        }
-        
-        return CGSize.zero
+        return UITableViewCell()
     }
 }
 
 extension ExercisesListViewController: WorkoutExecutionDelegate {
     func reloadFavourites() {
-        collectionView.reloadData()
+        tableView.reloadData()
     }
 }

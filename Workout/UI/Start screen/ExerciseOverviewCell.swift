@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExerciseOverviewCell: UICollectionViewCell {
+class ExerciseOverviewCell: UITableViewCell {
 
     @IBOutlet weak var exerciseIcon: UIImageView!
     @IBOutlet weak var exerciseNameLabel: UILabel!
