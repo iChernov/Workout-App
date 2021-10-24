@@ -33,6 +33,13 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let workoutExecution = segue.destination as? WorkoutExecutionViewController {
+            workoutExecution.workout = self.workout
+            workoutExecution.delegate = self
+        }
+    }
+    
     func reloadData(with newWorkout: Workout) {
         workout = newWorkout
         collectionView.reloadData()
@@ -46,13 +53,11 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
     // MARK: UICollectionViewDataSource
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return workout.count
     }
 
@@ -78,5 +83,11 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
         }
         
         return CGSize.zero
+    }
+}
+
+extension ExercisesListViewController: WorkoutExecutionDelegate {
+    func reloadFavourites() {
+        collectionView.reloadData()
     }
 }
