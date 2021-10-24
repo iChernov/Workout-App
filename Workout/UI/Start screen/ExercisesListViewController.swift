@@ -19,6 +19,7 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
         super.viewDidLoad()
         collectionView.collectionViewLayout = configureLayout()
         startWorkoutButton.setTitle("exercisesList.startButton.title".localized, for: .normal)
+        self.view.sendSubviewToBack(collectionView)
 
         DataLoader.loadExercisesData { [weak self] workout in
             guard let workout = workout else {
@@ -65,6 +66,10 @@ class ExercisesListViewController: UIViewController, UICollectionViewDelegate, U
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 0, bottom: 60, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

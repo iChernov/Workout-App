@@ -17,14 +17,13 @@ class ExerciseOverviewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    override func prepareForReuse() {
-        exerciseIcon.image = nil
-    }
+    private var exercise: ExerciseObject?
+    private let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 18, weight: .medium, scale: .medium)
     
     func setup(with exercise: ExerciseObject) {
+        self.exercise = exercise
         exerciseNameLabel.text = exercise.name
         setupFavouriteButton(using: exercise)
-        // load image from backend or from cache
         DataLoader.loadExerciseImage(imageURLString: exercise.coverImageURL) { [weak self] image in
             if let image = image {
                 self?.exerciseIcon.image = image
@@ -33,13 +32,24 @@ class ExerciseOverviewCell: UICollectionViewCell {
     }
     
     private func setupFavouriteButton(using exercise: ExerciseObject) {
-        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 18, weight: .medium, scale: .medium)
-        let starImage = UIImage(systemName: "star", withConfiguration: imageConfiguration)
+        var starImage = UIImage(systemName: "star", withConfiguration: imageConfiguration)
+        if DataLoader.isExerciseFavourite(exerciseName: exercise.name) == true {
+            starImage = UIImage(systemName: "star.fill", withConfiguration: imageConfiguration)
+        }
         favouriteButton.setImage(starImage, for: .normal)
-        //
     }
     
     @IBAction func favouriteAction(_ sender: Any) {
-        // could be moved to a special delegate class, if necessary
+        guard let exercise = exercise else { return }
+        var starImage: UIImage?
+
+        if DataLoader.isExerciseFavourite(exerciseName: exercise.name) == true {
+            starImage = UIImage(systemName: "star", withConfiguration: imageConfiguration)
+            DataLoader.changeFavourite(of: exercise.name, to: false)
+        } else {
+            starImage = UIImage(systemName: "star.fill", withConfiguration: imageConfiguration)
+            DataLoader.changeFavourite(of: exercise.name, to: true)
+        }
+        favouriteButton.setImage(starImage, for: .normal)
     }
 }

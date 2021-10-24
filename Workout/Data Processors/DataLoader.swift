@@ -26,6 +26,7 @@ class DataLoader {
                 debugPrint(response.result)
                 return
             }
+
             completion(workout)
         }
     }
@@ -51,5 +52,15 @@ class DataLoader {
                 }
             }
         }
+    }
+    
+    class func isExerciseFavourite(exerciseName: String) -> Bool {
+        let defaults = UserDefaults.standard
+        return defaults.bool(forKey: exerciseName) == true
+    }
+    
+    class func changeFavourite(of exerciseName: String, to newFavouriteStatus: Bool) {
+        let defaults = UserDefaults.standard
+        defaults.set(newFavouriteStatus, forKey: exerciseName)
     }
 }
